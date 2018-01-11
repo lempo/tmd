@@ -6,8 +6,7 @@ import com.arellomobile.mvp.MvpView
 import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 import ru.lempo.tmdviewer.core.Core
-import ru.lempo.tmdviewer.interactor.MovieInteractor
-import ru.lempo.tmdviewer.model.viewstate.MovieViewState
+import ru.lempo.tmdviewer.interactor.SplashInteractor
 import javax.inject.Inject
 
 /**
@@ -15,28 +14,23 @@ import javax.inject.Inject
  * Email: op@trinitydigital.ru
  */
 @StateStrategyType(AddToEndSingleStrategy::class)
-interface MovieView : MvpView {
-    fun render(movieViewState: MovieViewState)
-    fun shareMovie()
+interface SplashView : MvpView {
+    fun ready()
 }
 
 @InjectViewState
-class MoviePresenter(movieId: Int) : MvpPresenter<MovieView>() {
+class SplashPresenter : MvpPresenter<SplashView>() {
 
     @Inject
-    lateinit var movieInteractor: MovieInteractor
+    lateinit var splashInteractor: SplashInteractor
 
     init {
-        Core.instance.plusMovieComponent().inject(this)
-        movieInteractor.getMovie(movieId).subscribe {
-            viewState.render(it)
-        }
+        Core.instance.plusSplashComponent().inject(this)
+        splashInteractor.getConfiguration().subscribe({ viewState.ready() }, { viewState.ready() })
     }
 
     override fun onDestroy() {
-        Core.instance.clearMovieComponent()
+        Core.instance.clearSplashComponent()
         super.onDestroy()
     }
-
-    fun shareMovie() = viewState.shareMovie()
 }

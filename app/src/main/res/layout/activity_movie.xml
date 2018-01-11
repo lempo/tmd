@@ -52,6 +52,7 @@
                     android:layout_height="0dp"
                     android:layout_marginRight="@dimen/dp8"
                     android:layout_marginTop="@dimen/dp16"
+                    android:background="@android:color/darker_gray"
                     app:imagePath="@{item.imagePath}"
                     app:layout_constraintDimensionRatio="H,2:3"
                     app:layout_constraintHorizontal_weight="1"
@@ -61,19 +62,19 @@
 
                 <TextView
                     android:id="@+id/tvRatingHint"
-                    android:layout_width="130dp"
+                    style="@style/Text.Bold.M"
+                    android:layout_width="@dimen/activity_movie_rating_gap"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp8"
                     android:layout_marginTop="@dimen/dp16"
                     android:text="@string/rating"
-                    android:textSize="@dimen/textM"
-                    android:textStyle="bold"
                     app:layout_constraintLeft_toRightOf="@+id/ivPoster"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tvRating"
+                    style="@style/Text.Normal.XL"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp16"
@@ -82,25 +83,24 @@
                     android:paddingEnd="@dimen/dp4"
                     android:paddingStart="@dimen/dp4"
                     android:text="@{item.ratingString}"
-                    android:textSize="@dimen/textXL"
                     app:layout_constraintLeft_toLeftOf="@+id/tvRatingHint"
                     app:layout_constraintRight_toRightOf="@+id/tvRatingHint"
                     app:layout_constraintTop_toBottomOf="@+id/tvRatingHint" />
 
                 <TextView
                     android:id="@+id/tvDateHint"
+                    style="@style/Text.Bold.M"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp16"
                     android:text="@string/release_date"
-                    android:textSize="@dimen/textM"
-                    android:textStyle="bold"
                     app:layout_constraintLeft_toLeftOf="@+id/tvRatingHint"
                     app:layout_constraintRight_toRightOf="@+id/tvRatingHint"
                     app:layout_constraintTop_toBottomOf="@+id/tvRating" />
 
                 <TextView
                     android:id="@+id/tvDate"
+                    style="@style/Text.Normal.M"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp16"
@@ -109,30 +109,29 @@
                     android:paddingEnd="@dimen/dp4"
                     android:paddingStart="@dimen/dp4"
                     android:text="@{item.dateString}"
-                    android:textSize="@dimen/textM"
                     app:layout_constraintLeft_toLeftOf="@+id/tvRatingHint"
                     app:layout_constraintRight_toRightOf="@+id/tvRatingHint"
                     app:layout_constraintTop_toBottomOf="@+id/tvDateHint" />
 
                 <TextView
                     android:id="@+id/tvTitle"
+                    style="@style/Text.Normal.L"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp16"
                     android:text="@{item.title}"
-                    android:textSize="@dimen/textL"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/ivPoster" />
 
                 <TextView
                     android:id="@+id/tvDescription"
+                    style="@style/Text.Normal.S"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/dp16"
                     android:layout_marginTop="@dimen/dp16"
                     android:text="@{item.overview}"
-                    android:textSize="@dimen/textS"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvTitle" />

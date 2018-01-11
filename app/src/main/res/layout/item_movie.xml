@@ -17,6 +17,7 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:background="@android:color/darker_gray"
             app:imagePath="@{item.imagePath}"
             app:layout_constraintDimensionRatio="H,2:3"
             app:layout_constraintLeft_toLeftOf="parent"

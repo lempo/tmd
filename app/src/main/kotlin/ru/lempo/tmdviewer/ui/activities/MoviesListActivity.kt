@@ -1,5 +1,7 @@
 package ru.lempo.tmdviewer.ui.activities
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -11,32 +13,38 @@ import com.github.nitrico.lastadapter.LastAdapter
 import com.github.nitrico.lastadapter.Type
 import ru.lempo.tmdviewer.BR
 import ru.lempo.tmdviewer.R
-import ru.lempo.tmdviewer.databinding.ActivityMainBinding
+import ru.lempo.tmdviewer.databinding.ActivityMoviesListBinding
 import ru.lempo.tmdviewer.databinding.ItemMovieBinding
 import ru.lempo.tmdviewer.interactor.MoviesListInteractor
 import ru.lempo.tmdviewer.model.viewstate.MoviesListViewState
 import ru.lempo.tmdviewer.model.wrapper.MovieWrapper
-import ru.lempo.tmdviewer.presentation.MainPresenter
-import ru.lempo.tmdviewer.presentation.MainView
+import ru.lempo.tmdviewer.presentation.MoviesListPresenter
+import ru.lempo.tmdviewer.presentation.MoviesListView
 import ru.lempo.tmdviewer.ui.common.BaseActivity
 
 /**
  * Author: Oksana Pokrovskaya
  * Email: op@trinitydigital.ru
  */
-class MainActivity : BaseActivity<ActivityMainBinding>(), MainView {
+class MoviesListActivity : BaseActivity<ActivityMoviesListBinding>(), MoviesListView {
 
-    override val layout = R.layout.activity_main
+    override val layout = R.layout.activity_movies_list
     override val title = R.string.app_name
     override val menu = R.menu.menu_main
 
     @InjectPresenter
-    lateinit var presenter: MainPresenter
+    lateinit var presenter: MoviesListPresenter
 
     private val movies: MutableList<MovieWrapper> = mutableListOf()
 
+    companion object {
+        fun start(context: Context) = context.startActivity(Intent(context, MoviesListActivity::class.java))
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         binding.srMovies.setOnRefreshListener { presenter.refreshMovies() }
 
@@ -92,10 +100,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), MainView {
     }
 
     private fun renderEmpty() =
-        Toast.makeText(this, R.string.movies_empty, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.movies_empty, Toast.LENGTH_SHORT).show()
 
     private fun renderError(error: String) =
-        Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
 
     private fun renderList(movies: List<MovieWrapper>) {
         this.movies.clear()
@@ -103,6 +111,5 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), MainView {
         binding.rvMovies.adapter.notifyDataSetChanged()
     }
 
-    override fun goToMovie(movieId: Int) =
-        MovieActivity.start(this, movieId)
+    override fun goToMovie(movieId: Int) = MovieActivity.start(this, movieId)
 }

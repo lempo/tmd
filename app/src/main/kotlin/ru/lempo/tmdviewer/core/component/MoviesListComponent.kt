@@ -3,7 +3,7 @@ package ru.lempo.tmdviewer.core.component
 import dagger.Subcomponent
 import ru.lempo.tmdviewer.core.module.MovieModule
 import ru.lempo.tmdviewer.core.module.MoviesListModule
-import ru.lempo.tmdviewer.presentation.MainPresenter
+import ru.lempo.tmdviewer.presentation.MoviesListPresenter
 import javax.inject.Scope
 
 /**
@@ -14,7 +14,7 @@ import javax.inject.Scope
 @Subcomponent(modules = arrayOf(MoviesListModule::class))
 interface MoviesListComponent {
     fun plusMovieComponent(movieModule: MovieModule): MovieComponent
-    fun inject(mainPresenter: MainPresenter)
+    fun inject(moviesListPresenter: MoviesListPresenter)
 }
 
 @Scope

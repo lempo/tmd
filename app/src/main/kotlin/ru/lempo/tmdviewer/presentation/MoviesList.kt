@@ -18,13 +18,13 @@ import javax.inject.Inject
  * Email: op@trinitydigital.ru
  */
 @StateStrategyType(AddToEndSingleStrategy::class)
-interface MainView : MvpView {
+interface MoviesListView : MvpView {
     fun render(moviesListViewState: MoviesListViewState)
     fun goToMovie(movieId: Int)
 }
 
 @InjectViewState
-class MainPresenter : MvpPresenter<MainView>() {
+class MoviesListPresenter : MvpPresenter<MoviesListView>() {
 
     @Inject
     lateinit var moviesListInteractor: MoviesListInteractor
@@ -32,6 +32,11 @@ class MainPresenter : MvpPresenter<MainView>() {
     init {
         Core.instance.plusMoviesListComponent().inject(this)
         loadPopularMovies()
+    }
+
+    override fun onDestroy() {
+        Core.instance.clearMoviesListComponent()
+        super.onDestroy()
     }
 
     fun loadPopularMovies() = moviesListInteractor.getMoviesList(POPULAR).subscribe {

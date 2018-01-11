@@ -20,6 +20,7 @@ class Core : MultiDexApplication() {
     lateinit var coreComponent: CoreComponent
     var moviesListComponent: MoviesListComponent? = null
     var movieComponent: MovieComponent? = null
+    var splashComponent: SplashComponent? = null
 
     override fun onCreate() {
         super.onCreate()
@@ -37,6 +38,17 @@ class Core : MultiDexApplication() {
                     .networkModule(NetworkModule())
                     .configurationModule(ConfigurationModule(this))
                     .build()
+
+    fun plusSplashComponent(): SplashComponent {
+        if (splashComponent == null) {
+            splashComponent = coreComponent.plusSplashComponent(SplashModule())
+        }
+        return splashComponent!!
+    }
+
+    fun clearSplashComponent() {
+        splashComponent = null
+    }
 
     fun plusMoviesListComponent(): MoviesListComponent {
         if (moviesListComponent == null) {
