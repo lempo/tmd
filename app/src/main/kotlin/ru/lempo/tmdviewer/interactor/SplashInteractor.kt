@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 /**
  * Author: Oksana Pokrovskaya
- * Email: op@trinitydigital.ru
+ * Email: lempo.developer@gmail.com
  */
 class SplashInteractor {
 

@@ -8,7 +8,7 @@ import javax.inject.Scope
 
 /**
  * Author: Oksana Pokrovskaya
- * Email: op@trinitydigital.ru
+ * Email: lempo.developer@gmail.com
  */
 @MoviesListScope
 @Subcomponent(modules = arrayOf(MoviesListModule::class))

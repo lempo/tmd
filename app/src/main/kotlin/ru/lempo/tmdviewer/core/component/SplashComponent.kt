@@ -7,7 +7,7 @@ import javax.inject.Scope
 
 /**
  * Author: Oksana Pokrovskaya
- * Email: op@trinitydigital.ru
+ * Email: lempo.developer@gmail.com
  */
 @SplashScope
 @Subcomponent(modules = arrayOf(SplashModule::class))

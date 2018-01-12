@@ -7,7 +7,7 @@ import ru.lempo.tmdviewer.interactor.MoviesListInteractor
 
 /**
  * Author: Oksana Pokrovskaya
- * Email: op@trinitydigital.ru
+ * Email: lempo.developer@gmail.com
  */
 @Module
 class MoviesListModule {

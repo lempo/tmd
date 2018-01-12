@@ -4,7 +4,7 @@ import ru.lempo.tmdviewer.model.realm.Movie
 
 /**
  * Author: Oksana Pokrovskaya
- * Email: op@trinitydigital.ru
+ * Email: lempo.developer@gmail.com
  */
 class MoviesResponse(
         val page: Int,

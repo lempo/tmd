@@ -6,7 +6,7 @@ import java.util.*
 
 /**
  * Author: Oksana Pokrovskaya
- * Email: op@trinitydigital.ru
+ * Email: lempo.developer@gmail.com
  */
 open class Movie(
         @PrimaryKey

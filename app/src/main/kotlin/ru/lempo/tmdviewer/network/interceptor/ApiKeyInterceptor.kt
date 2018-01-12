@@ -5,7 +5,7 @@ import okhttp3.Response
 
 /**
  * Author: Oksana Pokrovskaya
- * Email: op@trinitydigital.ru
+ * Email: lempo.developer@gmail.com
  */
 class ApiKeyInterceptor : Interceptor {
 

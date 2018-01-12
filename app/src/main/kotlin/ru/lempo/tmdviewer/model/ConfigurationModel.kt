@@ -8,7 +8,7 @@ import ru.lempo.tmdviewer.network.TMDApi
 
 /**
  * Author: Oksana Pokrovskaya
- * Email: op@trinitydigital.ru
+ * Email: lempo.developer@gmail.com
  */
 class ConfigurationModel(private val context: Context, private val api: TMDApi) {
     var imageBaseUrl: String = context.getSharedPreferences(context.getString(R.string.preference_file_key), Context.MODE_PRIVATE).getString(IMG_BASE_URL, "")

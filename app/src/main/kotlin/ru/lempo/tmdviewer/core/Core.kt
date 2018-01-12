@@ -8,7 +8,7 @@ import ru.lempo.tmdviewer.core.module.*
 
 /**
  * Author: Oksana Pokrovskaya
- * Email: op@trinitydigital.ru
+ * Email: lempo.developer@gmail.com
  */
 class Core : MultiDexApplication() {
 

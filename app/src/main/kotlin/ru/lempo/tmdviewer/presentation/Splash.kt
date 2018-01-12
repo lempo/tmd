@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 /**
  * Author: Oksana Pokrovskaya
- * Email: op@trinitydigital.ru
+ * Email: lempo.developer@gmail.com
  */
 @StateStrategyType(AddToEndSingleStrategy::class)
 interface SplashView : MvpView {

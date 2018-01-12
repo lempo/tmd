@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 
 /**
  * Author: Oksana Pokrovskaya
- * Email: op@trinitydigital.ru
+ * Email: lempo.developer@gmail.com
  */
 object BindingAdapter {
 

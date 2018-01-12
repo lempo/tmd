@@ -24,7 +24,7 @@ import ru.lempo.tmdviewer.ui.common.BaseActivity
 
 /**
  * Author: Oksana Pokrovskaya
- * Email: op@trinitydigital.ru
+ * Email: lempo.developer@gmail.com
  */
 class MoviesListActivity : BaseActivity<ActivityMoviesListBinding>(), MoviesListView {
 

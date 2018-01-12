@@ -15,8 +15,8 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 /**
- * @author Yamushev Igor
- * @since  03.08.17
+ * Author: Oksana Pokrovskaya
+ * Email: lempo.developer@gmail.com
  */
 @Module
 class NetworkModule {

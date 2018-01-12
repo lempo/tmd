@@ -8,7 +8,7 @@ import ru.lempo.tmdviewer.network.response.MoviesResponse
 
 /**
  * Author: Oksana Pokrovskaya
- * Email: op@trinitydigital.ru
+ * Email: lempo.developer@gmail.com
  */
 interface TMDApi {
 

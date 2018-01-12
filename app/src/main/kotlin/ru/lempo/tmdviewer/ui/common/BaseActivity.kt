@@ -10,8 +10,8 @@ import android.databinding.ViewDataBinding
 import ru.lempo.tmdviewer.R
 
 /**
- * Author: Andrey Khitryy
- * Email: andrey.khitryy@gmail.com
+ * Author: Oksana Pokrovskaya
+ * Email: lempo.developer@gmail.com
  */
 abstract class BaseActivity<B : ViewDataBinding> : MvpAppCompatActivity() {
 

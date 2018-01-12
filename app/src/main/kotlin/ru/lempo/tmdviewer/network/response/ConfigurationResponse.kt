@@ -2,7 +2,7 @@ package ru.lempo.tmdviewer.network.response
 
 /**
  * Author: Oksana Pokrovskaya
- * Email: op@trinitydigital.ru
+ * Email: lempo.developer@gmail.com
  */
 class ConfigurationResponse(
         val images: ImagesConfiguration

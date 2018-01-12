@@ -9,7 +9,7 @@ import ru.lempo.tmdviewer.ui.common.BaseActivity
 
 /**
  * Author: Oksana Pokrovskaya
- * Email: op@trinitydigital.ru
+ * Email: lempo.developer@gmail.com
  */
 class SplashActivity : BaseActivity<ActivitySplashBinding>(), SplashView {
 
