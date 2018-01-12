@@ -11,7 +11,6 @@ import ru.lempo.tmdviewer.interactor.SplashInteractor
  */
 @Module
 class SplashModule {
-
     @Provides
     @SplashScope
     fun provideSplashInteractor() = SplashInteractor()

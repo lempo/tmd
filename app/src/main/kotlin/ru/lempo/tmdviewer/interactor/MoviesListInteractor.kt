@@ -9,7 +9,7 @@ import io.reactivex.schedulers.Schedulers
 import retrofit2.Response
 import ru.lempo.tmdviewer.core.Core
 import ru.lempo.tmdviewer.network.TMDApi
-import ru.lempo.tmdviewer.data.remote.response.MoviesResponse
+import ru.lempo.tmdviewer.network.response.MoviesResponse
 import ru.lempo.tmdviewer.model.realm.Movie
 import ru.lempo.tmdviewer.model.viewstate.MoviesListViewState
 import ru.lempo.tmdviewer.model.wrapper.MovieWrapper

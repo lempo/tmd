@@ -14,6 +14,7 @@ import javax.inject.Scope
 @Subcomponent(modules = arrayOf(MoviesListModule::class))
 interface MoviesListComponent {
     fun plusMovieComponent(movieModule: MovieModule): MovieComponent
+
     fun inject(moviesListPresenter: MoviesListPresenter)
 }
 

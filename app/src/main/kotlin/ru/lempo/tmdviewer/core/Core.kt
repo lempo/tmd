@@ -1,6 +1,5 @@
 package ru.lempo.tmdviewer.core
 
-import android.databinding.DataBindingUtil
 import android.support.multidex.MultiDexApplication
 import io.realm.Realm
 import io.realm.RealmConfiguration
@@ -25,19 +24,16 @@ class Core : MultiDexApplication() {
     override fun onCreate() {
         super.onCreate()
         instance = this
-        coreComponent = createCoreComponent()
+        coreComponent = DaggerCoreComponent.builder()
+                .networkModule(NetworkModule())
+                .configurationModule(ConfigurationModule(this))
+                .build()
 
         Realm.init(this)
         RealmConfiguration.Builder()
                 .deleteRealmIfMigrationNeeded()
                 .build()
     }
-
-    private fun createCoreComponent(): CoreComponent =
-            DaggerCoreComponent.builder()
-                    .networkModule(NetworkModule())
-                    .configurationModule(ConfigurationModule(this))
-                    .build()
 
     fun plusSplashComponent(): SplashComponent {
         if (splashComponent == null) {

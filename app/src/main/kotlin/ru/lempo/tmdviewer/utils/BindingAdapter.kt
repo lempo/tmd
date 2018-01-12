@@ -23,7 +23,6 @@ object BindingAdapter {
     fun loadUri(imageView: ImageView, path: String?) {
         if (!path.isNullOrBlank())
             Glide.with(imageView.context)
-//                    .load("http://image.tmdb.org/t/p/w154/" + path)
                     .load(path)
                     .centerCrop()
                     .into(imageView)

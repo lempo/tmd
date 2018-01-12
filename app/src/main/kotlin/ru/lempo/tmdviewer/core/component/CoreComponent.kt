@@ -20,6 +20,7 @@ import javax.inject.Singleton
 interface CoreComponent {
     fun plusMoviesListComponent(moviesListModule: MoviesListModule): MoviesListComponent
     fun plusSplashComponent(splashModule: SplashModule): SplashComponent
+
     fun inject(moviesListInteractor: MoviesListInteractor)
     fun inject(movieInteractor: MovieInteractor)
     fun inject(movieWrapper: MovieWrapper)

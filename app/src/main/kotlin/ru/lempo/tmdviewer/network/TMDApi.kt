@@ -3,7 +3,8 @@ package ru.lempo.tmdviewer.network
 import io.reactivex.Single
 import retrofit2.Response
 import retrofit2.http.*
-import ru.lempo.tmdviewer.data.remote.response.*
+import ru.lempo.tmdviewer.network.response.ConfigurationResponse
+import ru.lempo.tmdviewer.network.response.MoviesResponse
 
 /**
  * Author: Oksana Pokrovskaya

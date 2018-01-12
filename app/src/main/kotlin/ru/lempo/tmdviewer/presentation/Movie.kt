@@ -9,6 +9,7 @@ import ru.lempo.tmdviewer.core.Core
 import ru.lempo.tmdviewer.interactor.MovieInteractor
 import ru.lempo.tmdviewer.model.viewstate.MovieViewState
 import javax.inject.Inject
+import rx.subscriptions.CompositeSubscription
 
 /**
  * Author: Oksana Pokrovskaya
@@ -26,15 +27,18 @@ class MoviePresenter(movieId: Int) : MvpPresenter<MovieView>() {
     @Inject
     lateinit var movieInteractor: MovieInteractor
 
+    private val compositeSubscription = CompositeSubscription()
+
     init {
         Core.instance.plusMovieComponent().inject(this)
-        movieInteractor.getMovie(movieId).subscribe {
+        compositeSubscription.add(movieInteractor.getMovie(movieId).subscribe {
             viewState.render(it)
-        }
+        })
     }
 
     override fun onDestroy() {
         Core.instance.clearMovieComponent()
+        compositeSubscription.clear()
         super.onDestroy()
     }
 

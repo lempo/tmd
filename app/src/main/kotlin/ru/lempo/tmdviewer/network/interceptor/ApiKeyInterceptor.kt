@@ -1,11 +1,11 @@
-package ru.lempo.tmdviewer.data.remote.interceptor
+package ru.lempo.tmdviewer.network.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Response
 
 /**
- * Author: Andrey Khitryy
- * Email: andrey.khitryy@gmail.com
+ * Author: Oksana Pokrovskaya
+ * Email: op@trinitydigital.ru
  */
 class ApiKeyInterceptor : Interceptor {
 
@@ -18,7 +18,6 @@ class ApiKeyInterceptor : Interceptor {
                 .addQueryParameter("language", "en")
                 .build()
 
-        // Request customization: add request headers
         val requestBuilder = original.newBuilder()
                 .url(url)
 

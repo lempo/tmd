@@ -56,9 +56,8 @@ class MovieActivity : BaseActivity<ActivityMovieBinding>(), MovieView {
         }
     }
 
-    private fun renderError(error: String) {
+    private fun renderError(error: String) =
         Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
-    }
 
     private fun renderMovie(movie: MovieWrapper) {
         binding.item = movie

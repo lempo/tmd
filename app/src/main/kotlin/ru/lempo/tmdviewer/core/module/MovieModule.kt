@@ -11,7 +11,6 @@ import ru.lempo.tmdviewer.interactor.MovieInteractor
  */
 @Module
 class MovieModule {
-
     @Provides
     @MovieScope
     fun provideMovieInteractor() = MovieInteractor()

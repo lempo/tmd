@@ -1,4 +1,4 @@
-package ru.lempo.tmdviewer.data.remote.response
+package ru.lempo.tmdviewer.network.response
 
 /**
  * Author: Oksana Pokrovskaya

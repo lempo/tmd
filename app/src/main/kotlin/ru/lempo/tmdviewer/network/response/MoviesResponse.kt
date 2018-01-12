@@ -1,4 +1,4 @@
-package ru.lempo.tmdviewer.data.remote.response
+package ru.lempo.tmdviewer.network.response
 
 import ru.lempo.tmdviewer.model.realm.Movie
 

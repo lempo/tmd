@@ -11,7 +11,6 @@ import ru.lempo.tmdviewer.interactor.MoviesListInteractor
  */
 @Module
 class MoviesListModule {
-
     @Provides
     @MoviesListScope
     fun provideMoviesListInteractor() = MoviesListInteractor()
